@@ -19,7 +19,7 @@ class CreateFlimsTable extends Migration
             $table->text('description');
             $table->string('release');
             $table->date('date');
-            $table->tinyInteger('rating');
+            $table->enum('rating', config('enum.rating'));
             $table->string('ticket');
             $table->string('country');
             $table->string('photo');
