@@ -15,3 +15,5 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/flims', 'FlimController@index')->name('flim.index');
+Route::get('flims/create', 'FlimController@create')->name('flim.create');
+Route::post('flims', 'FlimController@store')->name('flim.store');

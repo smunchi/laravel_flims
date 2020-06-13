@@ -72,9 +72,19 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if(Session::has('success'))
+                        <div class="alert-float alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+                </div>
+            </div>
             @yield('content')
-        </main>
+        </div>
     </div>
 </body>
 </html>

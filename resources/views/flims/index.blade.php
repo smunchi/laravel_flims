@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    List of flims
+                    <p><a class="btn btn-primary" href="{{ route('flim.create') }}">Create new flim</a></p>
+                    <div>List of flims</div>
                 </div>
             </div>
         </div>
