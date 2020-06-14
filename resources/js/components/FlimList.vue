@@ -6,15 +6,19 @@
                     <div class="card-header">Flims</div>
 
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-bordered">
                             <thead>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Rating</th>
+                            <th scope="col">Country</th>
                             </thead>
                             <tbody>
                             <tr v-for="flim in flims">
-                                <td>{{flim.name}}</td>
+                                <td><a :href="flimIndexRoute+'/'+flim.slug">{{flim.name}}</a></td>
                                 <td>{{ flim.description}}</td>
+                                <td>{{ flim.rating}}</td>
+                                <td>{{ flim.country}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -43,6 +47,7 @@
         data() {
           return {
               flims : '',
+              flimIndexRoute: flimIndexRoute,
               meta: {
                   per_page: 3,
                   current:1,

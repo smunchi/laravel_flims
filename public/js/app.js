@@ -5659,6 +5659,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5669,6 +5673,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       flims: '',
+      flimIndexRoute: flimIndexRoute,
       meta: {
         per_page: 3,
         current: 1,
@@ -42838,21 +42843,39 @@ var render = function() {
             "div",
             { staticClass: "card-body" },
             [
-              _c("table", { staticClass: "table table-striped" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.flims, function(flim) {
-                    return _c("tr", [
-                      _c("td", [_vm._v(_vm._s(flim.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(flim.description))])
-                    ])
-                  }),
-                  0
-                )
-              ]),
+              _c(
+                "table",
+                { staticClass: "table table-striped table-bordered" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.flims, function(flim) {
+                      return _c("tr", [
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: _vm.flimIndexRoute + "/" + flim.slug
+                              }
+                            },
+                            [_vm._v(_vm._s(flim.name))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(flim.description))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(flim.rating))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(flim.country))])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c("pagination", {
                 staticClass: "display-inline",
@@ -42883,7 +42906,11 @@ var staticRenderFns = [
     return _c("thead", [
       _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
       _vm._v(" "),
-      _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")])
+      _c("th", { attrs: { scope: "col" } }, [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("th", { attrs: { scope: "col" } }, [_vm._v("Rating")]),
+      _vm._v(" "),
+      _c("th", { attrs: { scope: "col" } }, [_vm._v("Country")])
     ])
   }
 ]

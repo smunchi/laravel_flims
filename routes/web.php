@@ -20,4 +20,5 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/flims/get', 'FlimController@get')->name('flim.get');
     Route::get('flims/create', 'FlimController@create')->name('flim.create');
     Route::post('flims', 'FlimController@store')->name('flim.store');
+    Route::get('flims/{slug}', 'FlimController@show')->name('flim.show');
 });

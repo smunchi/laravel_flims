@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flim extends Model
 {
-    protected $fillable = ['name', 'description', 'release', 'date', 'rating', 'ticket', 'country', 'photo'];
+    protected $fillable = ['name', 'slug', 'description', 'release', 'date', 'rating', 'ticket', 'country', 'photo'];
 
     protected $dates = ['date'];
 

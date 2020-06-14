@@ -16,6 +16,7 @@ class CreateFlimsTable extends Migration
         Schema::create('flims', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('slug');
             $table->text('description');
             $table->string('release');
             $table->date('date');
