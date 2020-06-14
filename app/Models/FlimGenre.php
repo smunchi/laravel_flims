@@ -12,4 +12,9 @@ class FlimGenre extends Model
     {
         return $this->belongsTo(Flim::class);
     }
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
 }

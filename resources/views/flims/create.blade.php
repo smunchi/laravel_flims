@@ -89,6 +89,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="genre" class="col-md-4">Genre:</label>
+                                <div class="col-md-6">
+                                    @foreach($genres as $id => $genre)
+                                        <input type="checkbox" name="genres[]" value="{{ $id }}"/> {{ $genre }}
+                                    @endforeach
+                                    @error('genre')
+                                    <div class="alert-float alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="photo" class="col-md-4">Photo:</label>
                                 <div class="col-md-6">
                                     <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo"/>

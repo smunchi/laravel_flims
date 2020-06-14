@@ -12,6 +12,6 @@ class Flim extends Model
 
     public function genres()
     {
-        return $this->belongsToMany(FlimGenre::class);
+        return $this->belongsToMany(Genre::class, 'flim_genres', 'flim_id', 'genre_id');
     }
 }

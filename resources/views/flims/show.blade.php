@@ -28,6 +28,14 @@
                             <th>Country</th><td>{{ $flim->country }}</td>
                         </tr>
                         <tr>
+                            <th>Genre</th>
+                            <td>
+                                @foreach($flim->genres as $genre)
+                                    <p>{{ $genre->name }}</p>
+                                @endforeach
+                           </td>
+                        </tr>
+                        <tr>
                             <th>photo</th><td><img width="200" src="{{ asset('storage/flims/'.$flim->photo) }}"/></td>
                         </tr>
                     </table>
