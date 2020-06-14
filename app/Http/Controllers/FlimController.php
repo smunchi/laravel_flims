@@ -2,29 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FlimRequest;
 use App\Models\Flim;
-use Illuminate\Http\Request;
 
 class FlimController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('flims.index');
+    }
+
+    public function get()
+    {
+        $flims = Flim::paginate(3);
+
+        return response()->json(['flims' => $flims], 200);
     }
 
     public function create()
@@ -32,7 +24,7 @@ class FlimController extends Controller
         return view('flims.create');
     }
 
-    public function store(Request $request)
+    public function store(FlimRequest $request)
     {
         if ($request->hasFile('photo')) {
             $request->photo->store("flims");
@@ -49,10 +41,6 @@ class FlimController extends Controller
                 'photo' => $request->file('photo')->getClientOriginalName()
             ]
         );
-
-        if($request->wantsJson()) {
-            return response()->json(new \App\Http\Resources\Flim($flim), 201);
-        }
 
         return redirect()->back()->with('success', __('Flim stored successfully!'));
     }

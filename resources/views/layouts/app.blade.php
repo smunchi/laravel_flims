@@ -86,5 +86,8 @@
             @yield('content')
         </div>
     </div>
+    <!-- Scripts -->
+    @yield('route')
+    @stack('js')
 </body>
 </html>

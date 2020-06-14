@@ -15,10 +15,15 @@
                     @endif
 
                     <p><a class="btn btn-primary" href="{{ route('flim.create') }}">Create new flim</a></p>
-                    <div>List of flims</div>
+                    <flim-list></flim-list>
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+@section('route')
+    <script>
+        window.flimRoute = "{{ route('flim.get') }}";
+    </script>
 @endsection
