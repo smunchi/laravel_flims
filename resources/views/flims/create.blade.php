@@ -111,7 +111,7 @@
                             <div class="form-group row">
                                 <div class="col-md-4"></div>
                                 <div class="col-md-6">
-                                    <input type="submit" class="form-control btn-primary" value="Save"/>
+                                    <input type="submit" class="btn" value="Save"/>
                                 </div>
                             </div>
                         </form>
