@@ -1,8 +1,8 @@
 <template>
     <nav v-if="pages() > 1" aria-label="Page navigation">
         <ul class="pagination">
-            <li class="page-item" :class="{disabled: current <= 1}">
-                <a class="page-link" :disabled="current <= 1"
+            <li :class="{disabled: current <= 1}">
+                <a :disabled="current <= 1"
                     @click.prevent="previousBtnClick(current)"
                     href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
@@ -11,17 +11,17 @@
             </li>
             <li v-for="(page,index) in pagesWithDot"
                 :class="{active: page === current}"
-                :key="index" class="page-item">
+                :key="index">
                 <input v-if="activeIndex === index && !(typeof page === 'number')"
                    v-model="inputValue"
                    @keyup.enter="inputFormClick()"
                    type="text" class="form-control small-width">
-                <a v-else class="page-link" :class="{disabled:(page === current) || !(typeof page === 'number')}"
+                <a v-else :class="{disabled:(page === current) || !(typeof page === 'number')}"
                    @click.prevent="btnClick(page, index)"
                    href="#">{{page}}</a>
             </li>
-            <li class="page-item" :class="{disabled: current >= lastPage}">
-                <a class="page-link" :disabled="current >= lastPage" @click.prevent="nextBtnClick(current)"
+            <li :class="{disabled: current >= lastPage}">
+                <a :disabled="current >= lastPage" @click.prevent="nextBtnClick(current)"
                    href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only">Next</span>

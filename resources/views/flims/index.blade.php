@@ -6,7 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Flims</div>
-                    <p><a class="btn btn-primary" href="{{ route('flim.create') }}">Create new flim</a></p>
+                    <p class="section_15 text-right w-43">
+                        <a class="btn btn-primary" href="{{ route('flim.create') }}">Create new flim</a>
+                    </p>
                     <flim-list></flim-list>
                 </div>
             </div>

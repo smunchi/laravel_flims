@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 </head>
 <body>
+<div id="app">
 <!-- Header Area Start -->
 <header class="header-area">
     <!-- Main Header Area Start -->
@@ -269,5 +270,6 @@
     <!-- Scripts -->
     @yield('route')
     @stack('js')
+</div>
 </body>
 </html>

@@ -42941,48 +42941,36 @@ var render = function() {
           "ul",
           { staticClass: "pagination" },
           [
-            _c(
-              "li",
-              {
-                staticClass: "page-item",
-                class: { disabled: _vm.current <= 1 }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: {
-                      disabled: _vm.current <= 1,
-                      href: "#",
-                      "aria-label": "Previous"
-                    },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.previousBtnClick(_vm.current)
-                      }
-                    }
+            _c("li", { class: { disabled: _vm.current <= 1 } }, [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    disabled: _vm.current <= 1,
+                    href: "#",
+                    "aria-label": "Previous"
                   },
-                  [
-                    _c("span", { attrs: { "aria-hidden": "true" } }, [
-                      _vm._v("«")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-                  ]
-                )
-              ]
-            ),
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.previousBtnClick(_vm.current)
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("«")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+                ]
+              )
+            ]),
             _vm._v(" "),
             _vm._l(_vm.pagesWithDot, function(page, index) {
               return _c(
                 "li",
-                {
-                  key: index,
-                  staticClass: "page-item",
-                  class: { active: page === _vm.current }
-                },
+                { key: index, class: { active: page === _vm.current } },
                 [
                   _vm.activeIndex === index && !(typeof page === "number")
                     ? _c("input", {
@@ -43024,7 +43012,6 @@ var render = function() {
                     : _c(
                         "a",
                         {
-                          staticClass: "page-link",
                           class: {
                             disabled:
                               page === _vm.current ||
@@ -43044,39 +43031,31 @@ var render = function() {
               )
             }),
             _vm._v(" "),
-            _c(
-              "li",
-              {
-                staticClass: "page-item",
-                class: { disabled: _vm.current >= _vm.lastPage }
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: {
-                      disabled: _vm.current >= _vm.lastPage,
-                      href: "#",
-                      "aria-label": "Next"
-                    },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.nextBtnClick(_vm.current)
-                      }
-                    }
+            _c("li", { class: { disabled: _vm.current >= _vm.lastPage } }, [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    disabled: _vm.current >= _vm.lastPage,
+                    href: "#",
+                    "aria-label": "Next"
                   },
-                  [
-                    _c("span", { attrs: { "aria-hidden": "true" } }, [
-                      _vm._v("»")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-                  ]
-                )
-              ]
-            )
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.nextBtnClick(_vm.current)
+                    }
+                  }
+                },
+                [
+                  _c("span", { attrs: { "aria-hidden": "true" } }, [
+                    _vm._v("»")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                ]
+              )
+            ])
           ],
           2
         )
