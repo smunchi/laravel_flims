@@ -51,66 +51,9 @@
                     </div>
                     <!-- Responsive Menu Start -->
                     <div class="responsive-menu">
-                        <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu">
-                                <!-- Mobile Search Start -->
-                                <li class="header-main-search hide-desktop">
-                                    <form>
-                                        <input type="search" placeholder="Search...">
-                                        <button type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                </li>
-                                <!-- Mobile Search End -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">Movies</a>
-                                </li>
-                                <!-- Authentication Links -->
-                                @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                    @endif
-                                @else
-                                    <li class="dropdown">
-                                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endguest
-                            </ul>
-                        </div>
+                        <div class="slicknav_menu"></div>
                     </div>
                     <!-- Responsive Menu End -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="header-main-search hide-mobile">
-                        <form>
-                            <input type="search" placeholder="Search...">
-                            <button type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </form>
-                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="mainmenu">
