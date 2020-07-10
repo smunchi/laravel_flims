@@ -13,7 +13,11 @@ class FlimController extends Controller
 {
     public function index()
     {
-        return view('flims.index');
+        $flims = Flim::orderBy('id', 'desc')->paginate(3);
+
+        return view('flims.index', [
+            'flims' => $flims
+        ]);
     }
 
     public function get()

@@ -51,7 +51,7 @@
                     </div>
                     <!-- Responsive Menu Start -->
                     <div class="responsive-menu">
-                        <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
+                        <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu">
                                 <!-- Mobile Search Start -->
                                 <li class="header-main-search hide-desktop">
                                     <form>
@@ -68,12 +68,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="" role="menuitem" tabindex="-1">Movies</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">News</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">Actors</a>
-                                </li>
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item">
@@ -85,8 +79,8 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <li class="dropdown">
+                                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
@@ -138,12 +132,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('flims') }}" role="menuitem" tabindex="-1">Movies</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">News</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="" role="menuitem" tabindex="-1">Actors</a>
-                                </li>
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item">
@@ -155,8 +143,8 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <li class="dropdown">
+                                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
@@ -207,10 +195,10 @@
     <div class="footer-top-area section_70">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-6">
+                <div class="col-lg-12 col-sm-12">
                     <div class="single-footer-widget">
-                        <p>6th Avenue st, manhattan</p>
-                        <p>New York, NY 10002</p>
+                        <p>10 Manor Farm</p>
+                        <p>Fox Road, NORWICH, NR14 7PZ, London</p>
                         <div class="footer-contact">
                             <p>mail us: <a href="#">support@flim.com</a></p>
                             <p>call us: <a href="#">+1 (800) 234-5678</a></p>
@@ -224,16 +212,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>about us</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Contact</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Terms &amp; Conditions</a></li>
-                            <li><a href="#"><i class="fa fa-angle-double-right"></i>Privacy policy</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -242,7 +220,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-box">
-                        <p>2020 © film. All rights reserved</p>
+                        <p>{{ date('Y') }} © film. All rights reserved</p>
                     </div>
                 </div>
             </div>
@@ -251,7 +229,10 @@
 </footer>
 <!-- Footer Area End -->
 
-
+</div>
+    <!-- Scripts -->
+    @yield('route')
+    @stack('js')
 <!--Jquery js-->
 <script src="{{ asset('js/jquery.js') }}"></script>
 <!--Jquery-ui js-->
@@ -267,9 +248,5 @@
 <!--Main js-->
 <script src="{{ asset('js/main.js') }}"></script>
 
-    <!-- Scripts -->
-    @yield('route')
-    @stack('js')
-</div>
 </body>
 </html>

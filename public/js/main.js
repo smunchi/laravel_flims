@@ -1,29 +1,4 @@
-/************* Main Js File ************************
-    Template Name: Filmoja
-    Author: Themescare
-    Version: 1.0
-    Copyright 2019
-*************************************************************/
-
-
-/*------------------------------------------------------------------------------------
-    
-JS INDEX
-=============
-
-01 - Main Slider JS
-02 - Top Movie Slider
-03 - Coming Soon Slider
-04 - About Slider
-05 - Partner Slider
-06 - Cast Slider
-07 - Youtube Popup JS
-08 - Datepicker JS
-09 - Responsive Menu
-10 - Btn To Top
-
-
--------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
 
 
 (function ($) {
@@ -31,13 +6,13 @@ JS INDEX
 
 	jQuery(document).ready(function ($) {
 
-		/* 
+		/*
 		=================================================================
 		01 - Main Slider JS
-		=================================================================	
+		=================================================================
 		*/
 
-		$(".filmoja-slide").owlCarousel({
+		$(".slide").owlCarousel({
 			animateOut: 'fadeOutLeft',
 			animateIn: 'fadeIn',
 			items: 2,
@@ -72,22 +47,22 @@ JS INDEX
 			}
 		});
 
-		$(".filmoja-slide").on("translate.owl.carousel", function () {
-			$(".filmoja-main-slide h4").removeClass("animated fadeInDown").css("opacity", "0");
-			$(".filmoja-main-slide h2, .filmoja-main-slide p").removeClass("animated fadeInLeft").css("opacity", "0");
-			$(".filmoja-main-slide .slider-play").removeClass("animated fadeInUp").css("opacity", "0");
+		$(".slide").on("translate.owl.carousel", function () {
+			$(".main-slide h4").removeClass("animated fadeInDown").css("opacity", "0");
+			$(".main-slide h2, .main-slide p").removeClass("animated fadeInLeft").css("opacity", "0");
+			$(".main-slide .slider-play").removeClass("animated fadeInUp").css("opacity", "0");
 		});
-		$(".filmoja-slide").on("translated.owl.carousel", function () {
-			$(".filmoja-main-slide h4").addClass("animated fadeInDown").css("opacity", "1");
-			$(".filmoja-main-slide h2, .filmoja-main-slide p").addClass("animated fadeInLeft").css("opacity", "1");
-			$(".filmoja-main-slide .slider-play").addClass("animated fadeInUp").css("opacity", "1");
+		$(".slide").on("translated.owl.carousel", function () {
+			$(".main-slide h4").addClass("animated fadeInDown").css("opacity", "1");
+			$(".main-slide h2, .main-slide p").addClass("animated fadeInLeft").css("opacity", "1");
+			$(".main-slide .slider-play").addClass("animated fadeInUp").css("opacity", "1");
 		});
 
 
-		/* 
+		/*
 		=================================================================
 		02 - Top Movie Slider
-		=================================================================	
+		=================================================================
 		*/
 		$(".top-movie-slider").owlCarousel({
 			autoplay: false,
@@ -123,10 +98,10 @@ JS INDEX
 			}
 		});
 
-		/* 
+		/*
 		=================================================================
 		03 - Coming Soon Slider
-		=================================================================	
+		=================================================================
 		*/
 		$(".coming-soon-slider").owlCarousel({
 			animateOut: 'fadeOutLeft',
@@ -143,10 +118,10 @@ JS INDEX
 			touchDrag: true
 		});
 
-		/* 
+		/*
 		=================================================================
 		04 - About Slider
-		=================================================================	
+		=================================================================
 		*/
 		$(".about-slider").owlCarousel({
 			items: 1,
@@ -162,10 +137,10 @@ JS INDEX
 			touchDrag: true
 		});
 
-		/* 
+		/*
 		=================================================================
 		05 - Partner Slider
-		=================================================================	
+		=================================================================
 		*/
 		$(".partners-slider").owlCarousel({
 			autoplay: true,
@@ -197,10 +172,10 @@ JS INDEX
 			}
 		});
 
-		/* 
+		/*
 		=================================================================
 		06 - Cast Slider
-		=================================================================	
+		=================================================================
 		*/
 		$(".cast-slider").owlCarousel({
 			autoplay: false,
@@ -236,10 +211,10 @@ JS INDEX
 			}
 		});
 
-		/* 
+		/*
 		=================================================================
 		07 - Youtube Popup JS
-		=================================================================	
+		=================================================================
 		*/
 
 		$('.popup-youtube, .play-video').magnificPopup({
@@ -251,30 +226,30 @@ JS INDEX
 			fixedContentPos: false
 		});
 
-		/* 
+		/*
 		=================================================================
 		08 - Datepicker JS
-		=================================================================	
+		=================================================================
 		*/
 
 		$(function () {
 			$("#releasedate").datepicker();
 		});
 
-		/* 
+		/*
 		=================================================================
 		09 - Responsive Menu
-		=================================================================	
+		=================================================================
 		*/
 		$("ul#responsive_navigation").slicknav({
-			prependTo: ".filmoja-responsive-menu"
+			prependTo: ".responsive-menu"
 		});
 	});
 
-	   /* 
+	   /*
 		=================================================================
 		10 - Btn To Top
-		=================================================================	
+		=================================================================
 		*/
 	if ($("body").length) {
 		var btnUp = $('<div/>', {
