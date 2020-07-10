@@ -86,12 +86,8 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="dropdown">
-                                        <a id="navbarDropdown"  class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <div>
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();">
@@ -180,7 +176,6 @@
 <script src="{{ asset('js/jquery.js') }}"></script>
 <!--Jquery-ui js-->
 <script src="{{ asset('js/jquery-ui.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script>
 <!--Bootstrap js-->
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <!--Owl-Carousel js-->
